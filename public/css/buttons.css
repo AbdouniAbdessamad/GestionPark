@@ -1,0 +1,77 @@
+.button-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: white;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.3);
+}
+
+/* Primary Button */
+.btn-primary {
+    background: linear-gradient(to right, #3b82f6, #2563eb);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(to right, #2563eb, #1d4ed8);
+}
+
+/* Secondary Button */
+.btn-secondary {
+    background: linear-gradient(to right, #6b7280, #4b5563);
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(to right, #4b5563, #374151);
+}
+
+/* Danger Button */
+.btn-danger {
+    background: linear-gradient(to right, #ef4444, #dc2626);
+}
+
+.btn-danger:hover {
+    background: linear-gradient(to right, #dc2626, #b91c1c);
+}
+
+/* Edit Button */
+.btn-edit {
+    background: linear-gradient(to right, #eab308, #ca8a04);
+}
+
+.btn-edit:hover {
+    background: linear-gradient(to right, #ca8a04, #a16207);
+}
+
+/* Back Button */
+.btn-back {
+    background: linear-gradient(to right, #3b82f6, #2563eb);
+}
+
+.btn-back:hover {
+    background: linear-gradient(to right, #2563eb, #1d4ed8);
+}
+
+.btn-icon {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+} 
