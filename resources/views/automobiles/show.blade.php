@@ -80,26 +80,30 @@
                     </div>
                     <div class="border-t border-gray-200">
                         <div>
-                            <br>
-                            <div class="bg-gray-50 px-4 py-5 flex items-center mb-2">
+                            
+                            <div style="margin-top: 10px;" class="bg-gray-50 px-4 py-5 flex items-center mb-2">
                                 <div style="margin-right: 10px;font-weight: bold;" class="text-sm font-medium text-gray-500 w-1/3">ID</div>
                                 <div class="text-sm text-gray-900 ml-8">{{ $automobile->id }}</div>
                             </div>
-                            <div class="bg-white px-4 py-5 flex items-center mb-2">
-                                <div style="margin-right: 10px;font-weight: bold;" class="text-sm font-medium text-gray-500 w-1/3">Nom du Conducteur</div>
-                                <div class="text-sm text-gray-900 ml-8">{{ $automobile->NomConducteur }}</div>
+                            <div style="margin-top: 10px;" class="bg-white px-4 py-5 flex items-center mb-2">
+                                <div style="margin-right: 10px;font-weight: bold;" class="text-sm font-medium text-gray-500 w-1/3">Etat</div>
+                                <div class="text-sm text-gray-900 ml-8">{{ $automobile->Etat }}</div>
                             </div>
-                            <div class="bg-gray-50 px-4 py-5 flex items-center mb-2">
-                                <div style="margin-right: 10px;font-weight: bold;" class="text-sm font-medium text-gray-500 w-1/3">Marque</div>
-                                <div class="text-sm text-gray-900 ml-8">{{ $automobile->Marque }}</div>
+                            <div style="margin-top: 10px;" class="bg-gray-50 px-4 py-5 flex items-center mb-2">
+                                <div style="margin-right: 10px;font-weight: bold;" class="text-sm font-medium text-gray-500 w-1/3">Kilometrage</div>
+                                <div class="text-sm text-gray-900 ml-8">{{ $automobile->Kilometrage }}</div>
                             </div>
-                            <div class="bg-white px-4 py-5 flex items-center mb-2">
-                                <div style="margin-right: 10px;font-weight: bold;" class="text-sm font-medium text-gray-500 w-1/3">Modèle</div>
-                                <div class="text-sm text-gray-900 ml-8">{{ $automobile->modele }}</div>
+                            <div style="margin-top: 10px;" class="bg-white px-4 py-5 flex items-center mb-2">
+                                <div style="margin-right: 10px;font-weight: bold;" class="text-sm font-medium text-gray-500 w-1/3">Vidange</div>
+                                <div class="text-sm text-gray-900 ml-8">{{ $automobile->Vidange}}</div>
                             </div>
-                            <div class="bg-gray-50 px-4 py-5 flex items-center">
+                            <div style="margin-top: 10px;" class="bg-gray-50 px-4 py-5 flex items-center">
                                 <div style="margin-right: 10px;font-weight: bold;" class="text-sm font-medium text-gray-500 w-1/3">Matricule</div>
                                 <div class="text-sm text-gray-900 ml-8">{{ $automobile->matricule }}</div>
+                            </div>
+                            <div style="margin-top: 10px;" class="bg-white px-4 py-5 flex items-center mb-2">
+                                <div style="margin-right: 10px;font-weight: bold;" class="text-sm font-medium text-gray-500 w-1/3">Carburant</div>
+                                <div class="text-sm text-gray-900 ml-8">{{ $automobile->Carburant}}</div>
                             </div>
                             <br>
                         </div>

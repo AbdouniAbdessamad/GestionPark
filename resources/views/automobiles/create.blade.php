@@ -123,32 +123,9 @@
             @csrf
 
             <div class="form-grid">
-                <div class="form-group">
-                    <label for="NomConducteur" class="form-label">Nom du Conducteur</label>
-                    <input type="text" name="NomConducteur" id="NomConducteur" value="{{ old('NomConducteur') }}" 
-                        class="form-input @error('NomConducteur') error @enderror">
-                    @error('NomConducteur')
-                        <p class="error-message">{{ $message }}</p>
-                    @enderror
-                </div>
 
-                <div class="form-group">
-                    <label for="Marque" class="form-label">Marque</label>
-                    <input type="text" name="Marque" id="Marque" value="{{ old('Marque') }}" 
-                        class="form-input @error('Marque') error @enderror">
-                    @error('Marque')
-                        <p class="error-message">{{ $message }}</p>
-                    @enderror
-                </div>
 
-                <div class="form-group">
-                    <label for="modele" class="form-label">Modèle</label>
-                    <input type="text" name="modele" id="modele" value="{{ old('modele') }}" 
-                        class="form-input @error('modele') error @enderror">
-                    @error('modele')
-                        <p class="error-message">{{ $message }}</p>
-                    @enderror
-                </div>
+                
 
                 <div class="form-group">
                     <label for="matricule" class="form-label">Matricule</label>
@@ -158,6 +135,34 @@
                         <p class="error-message">{{ $message }}</p>
                     @enderror
                 </div>
+
+                <div class="form-group">
+                    <label for="Etat" class="form-label">Etat</label>
+                    <input type="text" name="Etat" id="Etat" value="{{ old('Etat') }}" 
+                        class="form-input @error('Etat') error @enderror">
+                </div>
+
+                <div class="form-group">
+                    <label for="Kilometrage" class="form-label">Kilometrage</label>
+                    <input type="text" name="Kilometrage" id="Kilometrage" value="{{ old('Kilometrage') }}" 
+                        class="form-input @error('Kilometrage') error @enderror">
+                </div>
+
+                <div class="form-group">
+                    <label for="Vidange" class="form-label">Vidange</label>
+                    <input type="text" name="Vidange" id="Vidange" value="{{ old('Vidange') }}" 
+                        class="form-input @error('Vidange') error @enderror">
+                </div>
+
+                <div class="form-group">
+                    <label for="Carburant" class="form-label">Carburant</label>
+                    <input type="text" name="Carburant" id="Carburant" value="{{ old('Carburant') }}" 
+                        class="form-input @error('Carburant') error @enderror">
+                </div>
+                
+                
+                
+                
             </div>
 
             <div class="form-actions">

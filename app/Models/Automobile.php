@@ -10,18 +10,12 @@ class Automobile extends Model
     use HasFactory;
 
     protected $fillable = [
-        'NomConducteur',
-        'Marque',
-        'modele',
         'matricule',
-        'parking_id',
-        'date_entree',
-        'date_sortie',
-        'statut' // en stationnement/sorti
+        'Etat',
+        'Kilometrage',
+        'Vidange',
+        'Carburant',
     ];
 
-    public function parking()
-    {
-        return $this->belongsTo(Parking::class);
-    }
+    
 }

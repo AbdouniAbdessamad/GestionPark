@@ -16,6 +16,31 @@
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
+        <!-- Num Tel -->
+        <div class="mt-4">
+            <x-input-label for="num_tel" :value="__('Num Tel')" />
+            <x-text-input id="num_tel" class="block mt-1 w-full" type="text" name="num_tel" :value="old('num_tel')" required autocomplete="tel" />
+            <x-input-error :messages="$errors->get('num_tel')" class="mt-2" />
+        </div>
+
+        <!-- Role -->
+        <div class="mt-4">
+            <x-input-label for="role" :value="__('Role')" />
+            <select id="role" name="role" class="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" required>
+                <option value="">Sélectionnez un rôle</option>
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+            </select>
+            <x-input-error :messages="$errors->get('role')" class="mt-2" />
+        </div>
+
+        <!-- Grade -->
+        <div class="mt-4">
+            <x-input-label for="grade" :value="__('Grade')" />
+            <x-text-input id="grade" class="block mt-1 w-full" type="text" name="grade" :value="old('grade')" required />
+            <x-input-error :messages="$errors->get('grade')" class="mt-2" />
+        </div>
+
         <!-- Password -->
         <div class="mt-4">
             <x-input-label for="password" :value="__('Mot de passe')" />

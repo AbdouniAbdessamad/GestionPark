@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AutomobileController;
+use App\Http\Controllers\InventaireController;
+use App\Http\Controllers\FournisseurController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -20,6 +23,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     // Automobile routes
     Route::resource('automobiles', AutomobileController::class);
+    Route::resource('inventaires', InventaireController::class);
+    Route::resource('fournisseurs', FournisseurController::class);
+
+    // User routes
+    Route::resource('users', UserController::class);
 });
 
 require __DIR__.'/auth.php';

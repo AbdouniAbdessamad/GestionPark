@@ -30,10 +30,11 @@ class AutomobileController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'NomConducteur' => 'required|string|max:255',
-            'Marque' => 'required|string|max:255',
-            'modele' => 'required|string|max:255',
-            'matricule' => 'required|string|max:255|unique:automobiles',
+            "matricule" => "required|string|max:255",
+            "Etat" => "required|string|max:255",
+            "Kilometrage" => "required|string|max:255",
+            "Vidange" => "required|string|max:255",
+            "Carburant" => "required|string|max:255",
         ]);
 
         Automobile::create($request->all());
@@ -64,10 +65,11 @@ class AutomobileController extends Controller
     public function update(Request $request, Automobile $automobile)
     {
         $request->validate([
-            'NomConducteur' => 'required|string|max:255',
-            'Marque' => 'required|string|max:255',
-            'modele' => 'required|string|max:255',
-            'matricule' => 'required|string|max:255|unique:automobiles,matricule,' . $automobile->id,
+            "matricule" => "required|string|max:255",
+            "Etat" => "required|string|max:255",
+            "Kilometrage" => "required|string|max:255",
+            "Vidange" => "required|string|max:255",
+            "Carburant" => "required|string|max:255",
         ]);
 
         $automobile->update($request->all());
