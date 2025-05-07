@@ -1,5 +1,12 @@
 @extends('layouts.app')
-
+<style>
+.btn-submit {
+        background-color: #22c55e;
+    }
+    .btn-submit:hover {
+        background-color: #16a34a;
+    }
+</style>
 @section('content')
 <div class="py-12">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -7,7 +14,7 @@
             <div class="p-6 bg-white border-b border-gray-200">
                 <div class="flex justify-between items-center mb-6">
                     <h2 class="text-2xl font-semibold text-gray-800">Ajouter un Utilisateur</h2>
-                    <a href="{{ route('users.index') }}" class="btn btn-primary">
+                    <a href="{{ route('users.index') }}" class="btn btn-secondary">
                         Retour à la liste
                     </a>
                 </div>
@@ -81,10 +88,10 @@
                     </div>
 
                     <div class="flex justify-end space-x-4">
-                        <a href="{{ route('users.index') }}" class="btn btn-secondary">
+                        <a  href="{{ route('users.index') }}" class="btn btn-secondary">
                             Annuler
                         </a>
-                        <button type="submit" class="btn btn-primary">
+                        <button style="margin-left: 10px;" type="submit" class="btn btn-submit">
                             Créer l'utilisateur
                         </button>
                     </div>

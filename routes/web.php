@@ -7,6 +7,10 @@ use App\Http\Controllers\FournisseurController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\DemandeController;
+use App\Http\Controllers\CongeController;
+use App\Http\Controllers\DemandeInventaireController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -28,6 +32,15 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     // User routes
     Route::resource('users', UserController::class);
+    Route::resource('demandes', DemandeController::class);
+    Route::get('/demandesautomobile',[DemandeController::class,'automobile'])->name('demandes.automobile');
+
+    // Congé routes
+    Route::resource('conges', CongeController::class)->middleware(['auth']);
+
+    // Demande Inventaire routes
+    Route::resource('demande-inventaires', DemandeInventaireController::class)->middleware(['auth']);
+    Route::get('/indexa',[DemandeController::class,'indexa'])->name('demandes.indexa');
 });
 
 require __DIR__.'/auth.php';

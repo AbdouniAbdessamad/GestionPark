@@ -65,4 +65,10 @@
         </div>
     </div>
 </div>
+<script>
+function dismissMessage() {
+    document.getElementById('success-message').style.display = 'none';
+}
+</script>
+
 @endsection 

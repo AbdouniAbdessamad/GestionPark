@@ -41,7 +41,7 @@
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 bg-white border-b border-gray-200">
                 <div class="flex justify-between items-center mb-6">
-                    <h2 class="text-2xl font-semibold text-gray-800">Modifier l'Automobile</h2>
+                    <h2 class="text-2xl font-semibold text-gray-800">Modifier le Véhicule</h2>
                     <a href="{{ route('automobiles.index') }}" class="btn btn-cancel">
                         Retour à la liste
                     </a>
@@ -80,6 +80,16 @@
                                 <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
+                    </div>
+                    <div>
+                        <label for="Status" class="block text-sm font-medium text-gray-700">Status</label>
+                        <select name="Status" id="Status" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm @error('Status') border-red-500 @enderror">
+                            <option selected value="{{ old('Status', $automobile->Status) }}">{{ old('Status', $automobile->Status) }}</option>
+                            <option value="disponible">Disponible</option>
+                            <option value="en_utilisation">En utilisation</option>
+                            <option value="en_panne">En panne</option>
+                            <option value="Vidange">Necessite un vidange</option>
+                        </select>
                     </div>
 
                     <div class="button-container">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Automobile;
+
 use Illuminate\Http\Request;
 
 class AutomobileController extends Controller
@@ -35,6 +36,7 @@ class AutomobileController extends Controller
             "Kilometrage" => "required|string|max:255",
             "Vidange" => "required|string|max:255",
             "Carburant" => "required|string|max:255",
+            "Status" => "string|max:255",
         ]);
 
         Automobile::create($request->all());
@@ -70,6 +72,7 @@ class AutomobileController extends Controller
             "Kilometrage" => "required|string|max:255",
             "Vidange" => "required|string|max:255",
             "Carburant" => "required|string|max:255",
+            "Status" => "string|max:255",
         ]);
 
         $automobile->update($request->all());

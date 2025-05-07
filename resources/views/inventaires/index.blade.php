@@ -25,9 +25,9 @@
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 bg-white border-b border-gray-200">
                 <div class="flex justify-between items-center mb-6">
-                    <h2 class="text-2xl font-semibold text-gray-800">Liste des Inventaires</h2>
+                    <h2 class="text-2xl font-semibold text-gray-800">Liste des Articles</h2>
                     <a href="{{ route('inventaires.create') }}" class="btn btn-primary">
-                        Ajouter un Inventaire
+                        Ajouter un Article
                     </a>
                 </div>
 
@@ -80,4 +80,9 @@
         </div>
     </div>
 </div>
+<script>
+function dismissMessage() {
+    document.getElementById('success-message').style.display = 'none';
+}
+</script>
 @endsection 

@@ -28,9 +28,9 @@
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 bg-white border-b border-gray-200">
                 <div class="flex justify-between items-center mb-6">
-                    <h2 class="text-2xl font-semibold text-gray-800">Liste des Automobiles</h2>
+                    <h2 class="text-2xl font-semibold text-gray-800">Liste des Véhicules</h2>
                     <a href="{{ route('automobiles.create') }}" class="btn btn-primary">
-                        Ajouter une Automobile
+                        Ajouter un Véhicule
                     </a>
                 </div>
 
@@ -55,6 +55,7 @@
                                 <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Vidange</th>
                                 <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Carburant</th>
                                 <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Matricule</th>
+                                <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
                                 <th class="px-3 py-2 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
                             </tr>
                         </thead>
@@ -67,6 +68,16 @@
                                     <td style="text-align: center;" class="px-3 py-2 whitespace-nowrap text-sm text-gray-900">{{ $automobile->Vidange }}</td>
                                     <td style="text-align: center;" class="px-3 py-2 whitespace-nowrap text-sm text-gray-900">{{ $automobile->Carburant }}</td>
                                     <td style="text-align: center;" class="px-3 py-2 whitespace-nowrap text-sm text-gray-900">{{ $automobile->matricule }}</td>
+                                    @if($automobile->Status == 'en_utilisation')
+                                        <td style="text-align: center;" class="px-3 py-2 whitespace-nowrap text-sm text-gray-900">En utilisation</td>
+                                    @elseif($automobile->Status == 'en_panne')
+                                        <td style="text-align: center;" class="px-3 py-2 whitespace-nowrap text-sm text-gray-900">En panne</td>
+                                    @elseif($automobile->Status == 'Vidange')
+                                        <td style="text-align: center; background-color: red;" class="px-3 py-2 whitespace-nowrap text-sm text-gray-900">Necessite un vidange</td>
+                                    @else
+                                        <td style="text-align: center;" class="px-3 py-2 whitespace-nowrap text-sm text-gray-900">Disponible</td>
+
+                                    @endif
                                     <td colspan="2" class="px-3 py-2 whitespace-nowrap text-sm text-gray-500 text-center">
                                         <div class="flex justify-center space-x-2">
                                             <a href="{{ route('automobiles.show', $automobile) }}" class="text-gray-400 hover:text-blue-500 transition-colors duration-200" title="Voir">

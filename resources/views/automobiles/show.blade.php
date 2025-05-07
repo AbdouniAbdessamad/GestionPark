@@ -105,6 +105,19 @@
                                 <div style="margin-right: 10px;font-weight: bold;" class="text-sm font-medium text-gray-500 w-1/3">Carburant</div>
                                 <div class="text-sm text-gray-900 ml-8">{{ $automobile->Carburant}}</div>
                             </div>
+                            <div style="margin-top: 10px;" class="bg-white px-4 py-5 flex items-center mb-2">
+                                <div style="margin-right: 10px;font-weight: bold;" class="text-sm font-medium text-gray-500 w-1/3">Status</div>
+                                <div class="text-sm text-gray-900 ml-8">{{ $automobile->Status}}</div>
+                            </div>
+                            <div style="margin-top: 10px;" class="bg-gray-50 px-4 py-5 flex items-center mb-2">
+                                <div style="margin-right: 10px;font-weight: bold;" class="text-sm font-medium text-gray-500 w-1/3">Créé le</div>
+                                <div class="text-sm text-gray-900 ml-8">{{ $automobile->created_at->format('d/m/Y H:i') }}</div>
+                            </div>
+                            <div style="margin-top: 10px;" class="bg-white px-4 py-5 flex items-center mb-2">
+                                <div style="margin-right: 10px;font-weight: bold;" class="text-sm font-medium text-gray-500 w-1/3">Mis à jour le</div>
+                                <div class="text-sm text-gray-900 ml-8">{{ $automobile->updated_at->format('d/m/Y H:i') }}</div>
+                            </div>
+                        
                             <br>
                         </div>
                     </div>

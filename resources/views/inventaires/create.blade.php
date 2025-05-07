@@ -120,7 +120,7 @@
                             Annuler
                         </a>
                         <button type="submit" class="btn btn-submit">
-                            Créer
+                            Ajouter
                         </button>
                     </div>
                 </form>

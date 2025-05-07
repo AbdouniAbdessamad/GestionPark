@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('Kilometrage');
             $table->string('Vidange');
             $table->string('Carburant');
+            $table->string('Status')->default('disponible');
             $table->timestamps();
         });
     }

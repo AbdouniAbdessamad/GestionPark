@@ -16,17 +16,24 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     <x-nav-link :href="route('automobiles.index')" :active="request()->routeIs('automobiles.*')">
-                        {{ __('Automobiles') }}
+                        {{ __('Véhicules') }}
                     </x-nav-link>
                     <x-nav-link :href="route('inventaires.index')" :active="request()->routeIs('inventaires.*')">
-                        {{ __('Inventaires') }}
+                        {{ __('Inventaire') }}
                     </x-nav-link>
                     <x-nav-link :href="route('fournisseurs.index')" :active="request()->routeIs('fournisseurs.*')">
                         {{ __('Fournisseurs') }}
                     </x-nav-link>
                     <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.*')">
-                        {{ __('Users') }}
+                        {{ __('Utilisateurs') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('demandes.index')" :active="request()->routeIs('demandes.*')">
+                        {{ __('Demandes') }}
+                    </x-nav-link>
+                  
+                    
+
+                    
                 </div>
             </div>
 

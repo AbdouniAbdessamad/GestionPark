@@ -15,6 +15,7 @@ class Automobile extends Model
         'Kilometrage',
         'Vidange',
         'Carburant',
+        'Status',
     ];
 
     

@@ -89,6 +89,13 @@
         cursor: pointer;
         text-decoration: none;
     }
+    .btn-submit {
+        background-color: #22c55e;
+    }
+    
+    .btn-submit:hover {
+        background-color: #16a34a;
+    }
     .btn-secondary {
         background-color: #4a5568;
         color: white;
@@ -113,7 +120,7 @@
 <div class="form-container">
     <div class="form-card">
         <div class="form-header">
-            <h1 class="form-title">Ajouter une Automobile</h1>
+            <h1 class="form-title">Ajouter un Véhicule</h1>
             <a href="{{ route('automobiles.index') }}" class="btn btn-secondary">
                 Retour à la liste
             </a>
@@ -169,7 +176,7 @@
                 <a href="{{ route('automobiles.index') }}" class="btn btn-secondary">
                     Annuler
                 </a>
-                <button type="submit" class="btn btn-primary">
+                <button type="submit" class="btn btn-submit">
                     Ajouter
                 </button>
             </div>
