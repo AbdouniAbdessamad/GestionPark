@@ -1,6 +1,29 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+    .status-en-attente {
+        color: #fff;
+        background-color: #f97316;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-weight: 500;
+    }
+    .status-valide {
+        color: #fff;
+        background-color: #22c55e;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-weight: 500;
+    }
+    .status-refuse {
+        color: #fff;
+        background-color: #ef4444;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-weight: 500;
+    }
+</style>
 <div class="py-12">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -43,13 +66,13 @@
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $demande->libelle }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $demande->quantite }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">
-                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full 
-                                            @if($demande->status === 'en attente') bg-yellow-100 text-yellow-800
-                                            @elseif($demande->status === 'approuvé') bg-green-100 text-green-800
-                                            @else bg-red-100 text-red-800
-                                            @endif">
-                                            {{ $demande->status }}
-                                        </span>
+                                        @if($demande->status === 'en attente')
+                                            <span class="status-en-attente">{{ $demande->status }}</span>
+                                        @elseif($demande->status === 'approuvé')
+                                            <span class="status-valide">{{ $demande->status }}</span>
+                                        @else
+                                            <span class="status-refuse">{{ $demande->status }}</span>
+                                        @endif
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                         <div style="display: flex; gap: 10px;">

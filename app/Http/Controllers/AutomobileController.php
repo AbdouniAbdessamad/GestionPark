@@ -13,7 +13,7 @@ class AutomobileController extends Controller
      */
     public function index()
     {
-        $automobiles = Automobile::all();
+        $automobiles = Automobile::paginate(10);
         return view('automobiles.index', compact('automobiles'));
     }
 

@@ -9,7 +9,7 @@ class InventaireController extends Controller
 {
     public function index()
     {
-        $inventaires = Inventaire::with('fournisseur')->get();
+        $inventaires = Inventaire::with('fournisseur')->paginate(10);
         return view('inventaires.index', compact('inventaires'));
     }
 

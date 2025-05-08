@@ -21,6 +21,16 @@
         background-color: #667eea;
         color: white;
     }
+    .filter-container {
+        margin-bottom: 1rem;
+    }
+    .filter-select {
+        padding: 0.5rem;
+        border-radius: 4px;
+        border: 1px solid #e2e8f0;
+        background-color: white;
+        min-width: 200px;
+    }
 </style>
 
 <div class="py-12">
@@ -45,8 +55,18 @@
                     </div>
                 @endif
 
+                <div class="filter-container">
+                    <select id="statusFilter" class="filter-select" onchange="filterTable()">
+                        <option value="all">Tous les statuts</option>
+                        <option value="en_utilisation">En utilisation</option>
+                        <option value="en_panne">En panne</option>
+                        <option value="Vidange">Nécessite un vidange</option>
+                        <option value="disponible">Disponible</option>
+                    </select>
+                </div>
+
                 <div class="rounded-lg shadow overflow-hidden">
-                    <table class="table-rounded w-full divide-y divide-gray-200">
+                    <table class="table-rounded w-full divide-y divide-gray-200" id="automobilesTable">
                         <thead class="bg-gray-50">
                             <tr>
                              
@@ -69,13 +89,13 @@
                                     <td style="text-align: center;" class="px-3 py-2 whitespace-nowrap text-sm text-gray-900">{{ $automobile->Carburant }}</td>
                                     <td style="text-align: center;" class="px-3 py-2 whitespace-nowrap text-sm text-gray-900">{{ $automobile->matricule }}</td>
                                     @if($automobile->Status == 'en_utilisation')
-                                        <td style="text-align: center;" class="px-3 py-2 whitespace-nowrap text-sm text-gray-900">En utilisation</td>
+                                        <td style=" background-color: orange; text-align: center;" class="px-3 py-2 whitespace-nowrap text-sm text-gray-900">En utilisation</td>
                                     @elseif($automobile->Status == 'en_panne')
-                                        <td style="text-align: center;" class="px-3 py-2 whitespace-nowrap text-sm text-gray-900">En panne</td>
+                                        <td style="background-color: red; text-align: center;" class="px-3 py-2 whitespace-nowrap text-sm text-gray-900">En panne</td>
                                     @elseif($automobile->Status == 'Vidange')
                                         <td style="text-align: center; background-color: red;" class="px-3 py-2 whitespace-nowrap text-sm text-gray-900">Necessite un vidange</td>
                                     @else
-                                        <td style="text-align: center;" class="px-3 py-2 whitespace-nowrap text-sm text-gray-900">Disponible</td>
+                                        <td style="background-color: green; text-align: center;" class="px-3 py-2 whitespace-nowrap text-sm text-gray-900">Disponible</td>
 
                                     @endif
                                     <td colspan="2" class="px-3 py-2 whitespace-nowrap text-sm text-gray-500 text-center">
@@ -108,6 +128,9 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="mt-4">
+                    {{ $automobiles->links() }}
+                </div>
             </div>
         </div>
     </div>
@@ -116,6 +139,28 @@
 <script>
 function dismissMessage() {
     document.getElementById('success-message').style.display = 'none';
+}
+
+function filterTable() {
+    const filter = document.getElementById('statusFilter').value;
+    const table = document.getElementById('automobilesTable');
+    const rows = table.getElementsByTagName('tr');
+
+    for (let i = 1; i < rows.length; i++) {
+        const statusCell = rows[i].getElementsByTagName('td')[5]; // Index 5 is the status column
+        if (statusCell) {
+            const status = statusCell.textContent.trim().toLowerCase();
+            if (filter === 'all' || 
+                (filter === 'en_utilisation' && status === 'en utilisation') ||
+                (filter === 'en_panne' && status === 'en panne') ||
+                (filter === 'Vidange' && status === 'necessite un vidange') ||
+                (filter === 'disponible' && status === 'disponible')) {
+                rows[i].style.display = '';
+            } else {
+                rows[i].style.display = 'none';
+            }
+        }
+    }
 }
 </script>
 @endsection 

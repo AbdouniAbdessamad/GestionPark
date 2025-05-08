@@ -50,7 +50,7 @@ class DemandeController extends Controller
             'created_by' => Auth::id()
         ]);
 
-        return redirect()->route('demandes.index')
+        return redirect()->route('demandes.indexa')
             ->with('success', 'Demande créée avec succès');
     }
 

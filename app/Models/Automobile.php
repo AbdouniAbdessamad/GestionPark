@@ -18,5 +18,9 @@ class Automobile extends Model
         'Status',
     ];
 
-    
+    // Relationship with Demande
+    public function demandes()
+    {
+        return $this->hasMany(Demande::class, 'matricule', 'matricule');
+    }
 }

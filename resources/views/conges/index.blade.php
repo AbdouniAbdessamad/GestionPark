@@ -1,15 +1,41 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+    .status-en-attente {
+        color: #fff;
+        background-color: #f97316;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-weight: 500;
+    }
+    .status-valide {
+        color: #fff;
+        background-color: #22c55e;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-weight: 500;
+    }
+    .status-refuse {
+        color: #fff;
+        background-color: #ef4444;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-weight: 500;
+    }
+</style>
 <div class="py-12">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 bg-white border-b border-gray-200">
                 <div class="flex justify-between items-center mb-6">
                     <h2 class="text-2xl font-semibold text-gray-800">Mes Demandes de Congé</h2>
-                    <a href="{{ route('conges.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                        Nouvelle Demande
+                    <div class="flex justify-end mb-4">
+                    <a class="btn btn-secondary" href="{{ route('demandes.index') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Retour
                     </a>
+                </div>
+                    
                 </div>
 
                 @if(session('success'))
@@ -38,11 +64,13 @@
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $conge->date_debut->addDays($conge->Duree)->format('d/m/Y') }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $conge->type_conge }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">
-                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full 
-                                            {{ $conge->status === 'en attente' ? 'bg-yellow-100 text-yellow-800' : 
-                                               ($conge->status === 'approuvé' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800') }}">
-                                            {{ $conge->status }}
-                                        </span>
+                                        @if($conge->status === 'en attente')
+                                            <span class="status-en-attente">{{ $conge->status }}</span>
+                                        @elseif($conge->status === 'approuvé')
+                                            <span class="status-valide">{{ $conge->status }}</span>
+                                        @else
+                                            <span class="status-refuse">{{ $conge->status }}</span>
+                                        @endif
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                         <div style="display: flex; gap: 10px;">

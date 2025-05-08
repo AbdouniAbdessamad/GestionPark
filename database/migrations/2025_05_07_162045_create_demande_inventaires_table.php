@@ -16,7 +16,7 @@ return new class extends Migration
             $table->date('date_demande');
             $table->string('libelle');
             $table->integer('quantite');
-            $table->enum('status', ['en attente', 'approuvé', 'rejeté'])->default('en attente');
+            $table->string('status')->default('en attente');
             $table->foreignId('created_by')->constrained('users');
             $table->timestamps();
         });

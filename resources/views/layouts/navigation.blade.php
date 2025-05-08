@@ -11,29 +11,31 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                <div style="margin-left: 20px;" class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        {{ __('Accueil') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('automobiles.index')" :active="request()->routeIs('automobiles.*')">
-                        {{ __('Véhicules') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('inventaires.index')" :active="request()->routeIs('inventaires.*')">
-                        {{ __('Inventaire') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('fournisseurs.index')" :active="request()->routeIs('fournisseurs.*')">
-                        {{ __('Fournisseurs') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.*')">
-                        {{ __('Utilisateurs') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('demandes.index')" :active="request()->routeIs('demandes.*')">
-                        {{ __('Demandes') }}
-                    </x-nav-link>
-                  
-                    
-
-                    
+                    @if(Auth::user()->role === 'admin')
+                        <x-nav-link :href="route('automobiles.index')" :active="request()->routeIs('automobiles.*')">
+                            {{ __('Véhicules') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('inventaires.index')" :active="request()->routeIs('inventaires.*')">
+                            {{ __('Inventaire') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('fournisseurs.index')" :active="request()->routeIs('fournisseurs.*')">
+                            {{ __('Fournisseurs') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.*')">
+                            {{ __('Utilisateurs') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('admin.index')" :active="request()->routeIs('admin.*')">
+                            {{ __('Gestion des Demandes') }}
+                        </x-nav-link>
+                    @else
+                        <x-nav-link :href="route('demandes.index')" :active="request()->routeIs('demandes.*')">
+                            {{ __('Demandes') }}
+                        </x-nav-link>
+                    @endif
                 </div>
             </div>
 
@@ -89,9 +91,27 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('automobiles.index')" :active="request()->routeIs('automobiles.*')">
-                {{ __('Automobiles') }}
-            </x-responsive-nav-link>
+            @if(Auth::user()->role === 'admin')
+                <x-responsive-nav-link :href="route('automobiles.index')" :active="request()->routeIs('automobiles.*')">
+                    {{ __('Véhicules') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('inventaires.index')" :active="request()->routeIs('inventaires.*')">
+                    {{ __('Inventaire') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('fournisseurs.index')" :active="request()->routeIs('fournisseurs.*')">
+                    {{ __('Fournisseurs') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('users.index')" :active="request()->routeIs('users.*')">
+                    {{ __('Utilisateurs') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('admin.index')" :active="request()->routeIs('admin.*')">
+                    {{ __('Gestion des Demandes') }}
+                </x-responsive-nav-link>
+            @else
+                <x-responsive-nav-link :href="route('demandes.index')" :active="request()->routeIs('demandes.*')">
+                    {{ __('Demandes') }}
+                </x-responsive-nav-link>
+            @endif
         </div>
 
         <!-- Responsive Settings Options -->

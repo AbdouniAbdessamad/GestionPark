@@ -2,7 +2,6 @@
 
 @section('content')
 <style>
-
     .btn {
         display: inline-flex;
         align-items: center;
@@ -21,6 +20,27 @@
         background-color: #667eea;
         color: white;
     }
+    .status-en-attente {
+        color: #fff;
+        background-color: #f97316;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-weight: 500;
+    }
+    .status-valide {
+        color: #fff;
+        background-color: #22c55e;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-weight: 500;
+    }
+    .status-refuse {
+        color: #fff;
+        background-color: #ef4444;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-weight: 500;
+    }
 </style>
 
 <div class="py-12">
@@ -36,9 +56,10 @@
                     <a style="margin-left: 10px;" href="{{ route('conges.create') }}" class="btn btn-primary">Demande de Congé</a>
                 </div>
                 <div style="margin-top: 100px; display: flex; justify-content: center; align-items: center; gap: 10px;">
-                <a style="margin-left: 10px;" href="{{ route('conges.index') }}" class="btn btn-secondary">Historique des congés</a>
+
                 <a style="margin-left: 10px;" href="{{ route('demandes.indexa') }}" class="btn btn-secondary">Historique des demandes de véhicules</a>
                 <a style="margin-left: 10px;" href="{{ route('demande-inventaires.index') }}" class="btn btn-secondary">Historique des demandes d'un matériel</a>
+                <a style="margin-left: 10px;" href="{{ route('conges.index') }}" class="btn btn-secondary">Historique des congés</a>
                 </div>
             </div>
         </div>
