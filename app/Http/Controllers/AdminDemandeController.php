@@ -105,7 +105,9 @@ class AdminDemandeController extends Controller
 
     public function materielHistory()
     {
-        $demandesmateriel = DemandeInventaire::with('createdBy')
+        $demandesmateriel = DemandeInventaire::with(['createdBy' => function($query) {
+                $query->select('id', 'name');
+            }])
             ->orderBy('created_at', 'desc')
             ->paginate(10);
         
@@ -186,8 +188,7 @@ class AdminDemandeController extends Controller
 
     public function autoHistory()
     {
-        $automobiles = Automobile::where('Status', 'disponible')
-            ->whereHas('demandes', function($query) {
+        $automobiles = Automobile::whereHas('demandes', function($query) {
                 $query->where('status', 'validé');
             })
             ->with(['demandes' => function($query) {

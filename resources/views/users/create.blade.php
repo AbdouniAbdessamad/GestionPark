@@ -13,7 +13,7 @@
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 bg-white border-b border-gray-200">
                 <div class="flex justify-between items-center mb-6">
-                    <h2 class="text-2xl font-semibold text-gray-800">Ajouter un Utilisateur</h2>
+                    <h2 class="text-2xl font-semibold text-gray-800">Ajouter un Employé</h2>
                     <a href="{{ route('users.index') }}" class="btn btn-secondary">
                         Retour à la liste
                     </a>
@@ -92,7 +92,7 @@
                             Annuler
                         </a>
                         <button style="margin-left: 10px;" type="submit" class="btn btn-submit">
-                            Créer l'utilisateur
+                            Créer l'employé
                         </button>
                     </div>
                 </form>

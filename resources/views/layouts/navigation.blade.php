@@ -13,7 +13,7 @@
                 <!-- Navigation Links -->
                 <div style="margin-left: 20px;" class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Accueil') }}
+                        {{ __('Tableau de Bord') }}
                     </x-nav-link>
                     @if(Auth::user()->role === 'admin')
                         <x-nav-link :href="route('automobiles.index')" :active="request()->routeIs('automobiles.*')">
@@ -26,7 +26,7 @@
                             {{ __('Fournisseurs') }}
                         </x-nav-link>
                         <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.*')">
-                            {{ __('Utilisateurs') }}
+                            {{ __('Employés') }}
                         </x-nav-link>
                         <x-nav-link :href="route('admin.index')" :active="request()->routeIs('admin.*')">
                             {{ __('Gestion des Demandes') }}
